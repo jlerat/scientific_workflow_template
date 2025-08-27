@@ -4,7 +4,7 @@
 TODO
 
 # Installation
-- Create a suitable python environment. We recommend using [miniconda](https://docs.conda.io/projects/miniconda/en/latest/) combined with the environment specification provided in the [env\_package.yml] (env_package.yml) file in this repository.
+- Create a suitable python environment. We recommend using [miniconda](https://docs.conda.io/projects/miniconda/en/latest/) combined with the environment specification provided in the [env\_mypackage.yml] (env_package.yml) file in this repository.
 - Git clone this repository and run `pip install .`
 
 # Basic use
