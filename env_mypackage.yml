@@ -1,4 +1,4 @@
-name: env_hydrodiy
+name: env_mypackage
 channels:
   - conda-forge
   - defaults
