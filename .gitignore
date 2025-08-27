@@ -2,7 +2,8 @@ data/
 images/
 logs/
 outputs/
+*egg-info/
 
-
+*.swp
 *.pyc
 
