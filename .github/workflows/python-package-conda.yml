@@ -45,7 +45,7 @@ jobs:
       - name : Install mypackage package in conda env 
         run: |
           source $CONDA/etc/profile.d/conda.sh
-          conda activate env_project
+          conda activate env_mypackage
           cd $GITHUB_WORKSPACE
           echo "--- mypackage install : located in $PWD ---"
           pip install -e .
@@ -64,7 +64,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo "--- mypackage test : located in $PWD ---"
           pytest --ignore=src/pygme --ignore=src/hydrodiy --doctest-modules src
-          pytest --ignore=src/pygme --ignore=src/hydrodiy --ntry=100 --cov=mypackage --cov-report=xml --cov-report=html -cov-report=missing-term tests
+          pytest --ignore=src/pygme --ignore=src/hydrodiy --cov=mypackage --cov-report=xml --cov-report=html -cov-report=missing-term tests
       
       - name: Parse coverage report and create badge
         run: |
