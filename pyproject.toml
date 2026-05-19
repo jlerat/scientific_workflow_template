@@ -8,8 +8,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mypackage"
+version = "0.1"
 authors = [{name = "Julien Lerat, CSIRO Environment", email="julien.lerat@csiro.au"}]
-description = "Tool supporting the workflows"
+description = "Scientific workflow package"
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["data processing", "rainfall", "streamflow", "rainfall-runoff", "hydrology"]
@@ -22,22 +23,37 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Hydrology"
 ]    
 requires-python = ">= 3.8"
+
 dependencies = [
-    "numpy >= 1.20.0",
-    "scipy >= 1.0.0",
-    "pandas >= 2.0.0"
+    "setuptools",
+    "numpy>=1.20.0",
+    "scipy>=1.0.0",
+    "pandas>=2.0.0",
+    "cython>=3.2.4",
+    "matplotlib>=3.7.5",
+    "pip>=25.0.1",
+    "pyproj>=3.5.0",
+    "pyshp>=2.3.1",
+    "requests>=2.32.4"
 ]
-dynamic = ["version"]
 
-#[project.urls]
-#Homepage = "https://github.com/csiro-hydroinformatics/hydrodiy"
-#Repository = "https://github.com/csiro-hydroinformatics/hydrodiy"
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[dependency-groups]
+dev = [
+    "anybadge>=1.16.0",
+    "ruff>=0.15.12",
+    "pytest>=8.3.5",
+    "pytest-allclose>=1.0.0",
+    "pytest-cov>=5.0.0"
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.dynamic]
-version = {attr = "mypackage.__version__"}
+[tool.setuptools.package-data]
+"*" = ["*.pyx", "*.pxd", "*.c", "*.h", "*.zip", "*.csv",
+       "*.shp", "*.dbf", "*.shx", "*.prj"]
+
+[tool.uv]
+no-build-isolation-package = ["mypackage"]
+default-groups = []
+
