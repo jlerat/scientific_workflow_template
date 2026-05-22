@@ -46,6 +46,9 @@ dev = [
     "pytest-cov>=5.0.0"
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
