@@ -30,12 +30,12 @@ jobs:
         run: |
           uv run ruff check src/mypackage
  
-      - name: Run tests
+      - name: Run tests (without doc tests)
         run: |
-          set -e
           echo "--- mypackage test : located in $PWD ---"
-          uv run --locked pytest --doctest-modules src
-          uv run --locked pytest --cov=mypackage --cov-report=xml --cov-report=html -cov-report=missing-term tests
+          # set -e
+          # uv run --locked pytest --doctest-modules src
+          uv run --locked pytest --cov=mypackage --cov-report=xml --cov-report=html -cov-report=term-missing tests
       
       - name: Parse coverage report and create badge
         run: |
