@@ -22,26 +22,28 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Scientific/Engineering :: Hydrology"
 ]    
-requires-python = ">= 3.8"
+requires-python = ">= 3.14"
 
 dependencies = [
     "setuptools",
-    "numpy>=1.20.0",
-    "scipy>=1.0.0",
-    "pandas>=2.0.0",
-    "cython>=3.2.4",
-    "matplotlib>=3.7.5",
-    "pip>=25.0.1",
-    "pyproj>=3.5.0",
-    "pyshp>=2.3.1",
-    "requests>=2.32.4"
+    "numpy>=2.4.6",
+    "scipy>=1.17.1",
+    "pandas>=3.0.3",
+    "cython>=3.2.5",
+    "matplotlib>=3.10.9",
+    "pip>=26.1.2",
+    "pyproj",
+    "pyshp",
+    "requests",
+    "hydrodiy",
+    "pygme"
 ]
 
 [dependency-groups]
 dev = [
     "anybadge>=1.16.0",
     "ruff>=0.15.12",
-    "pytest>=8.3.5",
+    "pytest>=9.0.3",
     "pytest-allclose>=1.0.0",
     "pytest-cov>=5.0.0"
 ]
@@ -60,3 +62,6 @@ where = ["src"]
 no-build-isolation-package = ["mypackage"]
 default-groups = []
 
+[tool.uv.sources]
+hydrodiy = { git = "https://github.com/csiro-hydroinformatics/hydrodiy" }
+pygme = { git = "https://github.com/csiro-hydroinformatics/pygme" }
