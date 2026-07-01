@@ -9,10 +9,15 @@ def pytest_terminal_summary(terminalreporter):
 def pytest_addoption(parser):
     parser.addoption("--runslow", action="store_true", default=False, \
                                 help="run slow tests")
+    parser.addoption("--debug_mode", action="store_true", default=False,
+                     help="Activate debug mode")
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "slow: mark test as slow.")
 
+@pytest.fixture
+def debug_mode(request):
+    return request.config.getoption("--debug_mode")
 
 def pytest_collection_modifyitems(config, items):
     if config.getoption("--runslow"):
