@@ -36,7 +36,8 @@ dependencies = [
     "pyshp",
     "requests",
     "hydrodiy",
-    "pygme"
+    "pygme",
+    "ipython>=9.16.1"   
 ]
 
 [dependency-groups]
