@@ -6,4 +6,5 @@ outputs/
 
 *.swp
 *.pyc
+*.log
 
